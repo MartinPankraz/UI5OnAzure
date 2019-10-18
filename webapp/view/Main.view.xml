@@ -3,6 +3,9 @@
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
+					<headerContent>
+						<Button icon="sap-icon://hint" press="openGitHub" />
+					</headerContent>
 					<content>
 						<Image src="css/SAP_AzDevOps.png"></Image>
 					</content>
