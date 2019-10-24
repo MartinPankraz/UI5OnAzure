@@ -7,7 +7,7 @@
 						<Button icon="sap-icon://hint" press="openGitHub" />
 					</headerContent>
 					<content>
-						<!--<Image src="css/SAP_AzDevOps.png"></Image>-->
+						<Image src="css/SAP_AzDevOps.png"></Image>
 					</content>
 				</Page>
 			</pages>
