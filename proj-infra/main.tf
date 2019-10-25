@@ -1,9 +1,9 @@
 variable "prefix" {
-  type = string
+  description = "prefix identifier"
 }
 
 variable "location" {
-  type = string
+  description = "Azure Location to deploy to"
 }
 
 resource "azurerm_resource_group" "myrg" {

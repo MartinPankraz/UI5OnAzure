@@ -1,7 +1,3 @@
-variable "prefix" {
-  description = "ui5demo"
-}
+prefix = ui5demo
 
-variable "location" {
-  description = "northeurope"
-}
+location = northeurope
