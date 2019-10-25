@@ -1,12 +1,12 @@
   
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "myrg" {
   name     = "${var.prefix}-resources"
   location = "${var.location}"
 }
 
-resource "azurerm_container_registry" "example" {
+resource "azurerm_container_registry" "myrg" {
   name                = "${var.prefix}registry"
-  resource_group_name = "${azurerm_resource_group.example.name}"
-  location            = "${azurerm_resource_group.example.location}"
+  resource_group_name = "${azurerm_resource_group.myrg.name}"
+  location            = "${azurerm_resource_group.myrg.location}"
   sku                 = "Standard"
 }
