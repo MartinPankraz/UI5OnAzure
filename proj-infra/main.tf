@@ -1,4 +1,11 @@
-  
+variable "prefix" {
+  type = string
+}
+
+variable "location" {
+  type = string
+}
+
 resource "azurerm_resource_group" "myrg" {
   name     = "${var.prefix}-resources"
   location = "${var.location}"
