@@ -1,3 +1,3 @@
-prefix = ui5demo
+prefix = "ui5demo"
 
-location = northeurope
+location = "northeurope"
