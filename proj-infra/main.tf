@@ -55,15 +55,15 @@ resource "azurerm_app_service" "myrg" {
 
   /*site_config {
     linux_fx_version = "DOCKER|${var.docker_registry}${var.docker_registry_image_path}"
-  }
+  }*/
 
   app_settings = {
     "DOCKER_REGISTRY_SERVER_URL"          = "https://${var.docker_registry}"
-  }*/
+  }
 }
 
-/*resource "azurerm_app_service_slot" "myrg" {
-  name                = "${random_id.generator.hex}"
+resource "azurerm_app_service_slot" "myrg" {
+  name                = "dev" #"${random_id.generator.hex}"
   app_service_name    = "${azurerm_app_service.myrg.name}"
   location            = "${azurerm_resource_group.myrg.location}"
   resource_group_name = "${azurerm_resource_group.myrg.name}"
@@ -73,4 +73,4 @@ resource "azurerm_app_service" "myrg" {
     dotnet_framework_version = "v4.0"
   }
 
-}*/
+}
