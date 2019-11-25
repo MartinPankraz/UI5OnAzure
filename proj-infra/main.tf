@@ -1,3 +1,4 @@
+# Variable declarations (check values in *.auto.tfvars file)
 variable "prefix" {
   description = "prefix identifier"
 }
@@ -18,6 +19,13 @@ resource "azurerm_resource_group" "myrg" {
   name     = "${var.prefix}-resources"
   location = "${var.location}"
 }
+
+# special resources to create random ids for app slot
+resource "random_id" "generator" {
+  byte_length = 8
+}
+
+# Resources to be created incl configurations
 
 resource "azurerm_container_registry" "myrg" {
   name                = "${var.prefix}registry"
@@ -61,7 +69,7 @@ resource "azurerm_app_service" "myrg" {
 }
 
 resource "azurerm_app_service_slot" "myrg" {
-  name                = "${random_id.server.hex}"
+  name                = "${random_id.generator.hex}"
   app_service_name    = "${azurerm_app_service.myrg.name}"
   location            = "${azurerm_resource_group.myrg.location}"
   resource_group_name = "${azurerm_resource_group.myrg.name}"
