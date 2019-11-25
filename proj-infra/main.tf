@@ -47,28 +47,22 @@ resource "azurerm_app_service_plan" "myrg" {
   }
 }
 
-/*resource "azurerm_app_service" "myrg" {
+resource "azurerm_app_service" "myrg" {
   name                = "${var.prefix}-appservice"
   location            = "${azurerm_resource_group.myrg.location}"
   resource_group_name = "${azurerm_resource_group.myrg.name}"
   app_service_plan_id = "${azurerm_app_service_plan.myrg.id}"
 
-  site_config {
-    dotnet_framework_version = "v4.0"
-    remote_debugging_enabled = true
-    remote_debugging_version = "VS2015"
-  }
-
-  site_config {
+  /*site_config {
     linux_fx_version = "DOCKER|${var.docker_registry}${var.docker_registry_image_path}"
   }
 
   app_settings = {
     "DOCKER_REGISTRY_SERVER_URL"          = "https://${var.docker_registry}"
-  }
+  }*/
 }
 
-resource "azurerm_app_service_slot" "myrg" {
+/*resource "azurerm_app_service_slot" "myrg" {
   name                = "${random_id.generator.hex}"
   app_service_name    = "${azurerm_app_service.myrg.name}"
   location            = "${azurerm_resource_group.myrg.location}"
