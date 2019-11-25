@@ -68,7 +68,7 @@ resource "azurerm_app_service" "myrg" {
   }
 }
 
-resource "azurerm_app_service_slot" "myrg" {
+/*resource "azurerm_app_service_slot" "myrg" {
   name                = "${random_id.generator.hex}"
   app_service_name    = "${azurerm_app_service.myrg.name}"
   location            = "${azurerm_resource_group.myrg.location}"
@@ -79,4 +79,4 @@ resource "azurerm_app_service_slot" "myrg" {
     dotnet_framework_version = "v4.0"
   }
 
-}
+}*/
